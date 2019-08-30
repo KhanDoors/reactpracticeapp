@@ -15,6 +15,12 @@ class Container1 extends Component {
         </button>
         <button onClick={() => this.props.action1()}>Dispatch action 1</button>
         <button onClick={() => this.props.action2()}>Dispatch action 2</button>
+        <button onClick={() => this.props.action_creator1()}>
+          Dispatch Action Creator 1
+        </button>
+        <button onClick={() => this.props.action_creator2()}>
+          Dispatch Action Creator 2
+        </button>
       </div>
     );
   }
@@ -29,7 +35,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     action1: () => dispatch(ACTIONS.SUCCESS),
-    action2: () => dispatch(ACTIONS.FAILURE)
+    action2: () => dispatch(ACTIONS.FAILURE),
+    action_creator1: () => dispatch(ACTIONS.success()),
+    action_creator2: () => dispatch(ACTIONS.failure())
   };
 }
 
